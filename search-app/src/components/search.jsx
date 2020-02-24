@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 export default class Searcher extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ export default class Searcher extends React.Component {
   };
 
   fetchData() {
-    fetch("https://api.myjson.com/bins/kr5kk")
+    fetch("https://api.myjson.com/bins/ajhs0")
       .then(response => response.json())
       .then(json => {
         this.setState({
@@ -67,6 +68,7 @@ export default class Searcher extends React.Component {
           .map(info => (
             <div className="display">
               <span className="role">Role: {info.role}</span>
+              <span>, Name: {info.name}</span>
               <span>, Salary: {info.salary}</span>
             </div>
           ))}
